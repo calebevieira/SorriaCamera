@@ -11,12 +11,19 @@
 <body>
 
     <script>
-        const camera = document.getElementById("camera")
-
-        navigator.mediaDevices.getUserMedia ({video: true})
+        // Obtendo a referência do elemento de vídeo com o ID "camera"
+        const camera = document.getElementById("camera");
+    
+        // Solicitando acesso à câmera ao usuário
+        navigator.mediaDevices.getUserMedia({ video: true })
         .then(stream => {
-            camera.srcObject = stream
+            // Quando o acesso é concedido, definimos o fluxo de vídeo da câmera no elemento de vídeo
+            camera.srcObject = stream;
         })
+        .catch(error => {
+            // Se houver um erro ao acessar a câmera, exibimos uma mensagem de erro no console
+            console.error('Erro ao acessar a câmera:', error);
+        });
     </script>
 
 </body>
