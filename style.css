@@ -31,6 +31,7 @@ body {
     border: 10px solid transparent;
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
     animation: snakeBorder 4s linear infinite;
+    transform: translate(-50%, -50%) scaleX(-1); /* Inversão na Câmera */
 }
 
 @keyframes snakeBorder {
