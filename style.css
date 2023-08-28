@@ -5,46 +5,39 @@ body {
     align-items: center;
     min-height: 100vh;
     background-color: rgb(58, 58, 58);
-    animation: pulseBackground 5s ease-in-out infinite alternate; /* Adiciona a animação ao background */
+    animation: pulseBackground 5s ease-in-out infinite alternate;
 }
 
 @keyframes pulseBackground {
     0% {
-        background-color: rgb(136, 135, 135); /* Cor inicial */
+        background-color: rgb(136, 135, 135);
     }
     100% {
-        background-color: rgb(38, 38, 38); /* Cor alternativa */
+        background-color: rgb(38, 38, 38);
     }
 }
 
 #camera {
     border-radius: 50%;
-    width: 600px;
-    height: 600px;
+    width: 80vw;
+    max-width: 600px;
+    height: 80vw;
+    max-height: 600px;
     object-fit: cover;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    border: 10px solid transparent; /* Defina a borda inicial como transparente */
+    border: 10px solid transparent;
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
     animation: snakeBorder 4s linear infinite;
 }
 
 @keyframes snakeBorder {
-    0% {
-        border: 10px solid transparent; /* Define a borda como transparente no início */
+    0%, 50%, 100% {
+        border: 10px solid transparent;
     }
-    25% {
-        border: 10px solid white; /* Define a borda como branca em um quarto da animação */
-    }
-    50% {
-        border: 10px solid transparent; /* Define a borda como transparente na metade da animação */
-    }
-    75% {
-        border: 10px solid white; /* Define a borda como branca em três quartos da animação */
-    }
-    100% {
-        border: 10px solid transparent; /* Define a borda como transparente no final da animação */
+    25%, 75% {
+        border: 10px solid white;
     }
 }
